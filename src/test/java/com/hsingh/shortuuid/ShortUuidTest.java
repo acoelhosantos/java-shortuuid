@@ -1,10 +1,12 @@
 package com.hsingh.shortuuid;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class ShortUuidTest {
 
@@ -183,5 +185,20 @@ public class ShortUuidTest {
             String decodedUuid = builder.decode(test[1]);
             assertEquals(test[0], decodedUuid);
         }
+    }
+
+    @Test
+    public void uniquenessTest()
+    {
+        ShortUuid.Builder builder = new ShortUuid.Builder();
+
+        final int numberOfItems = 1000000;
+        final Set<ShortUuid> shortUuids = new HashSet<>();
+        for( int i = 0; i < numberOfItems; i++ )
+        {
+            shortUuids.add( builder.build( UUID.randomUUID() ) );
+        }
+
+        assertEquals( "Items should be unique!", numberOfItems, shortUuids.size() );
     }
 }
