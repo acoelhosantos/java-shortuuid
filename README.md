@@ -1,5 +1,4 @@
-# java-shortuuid
-[![Build Status](https://travis-ci.org/hsingh/java-shortuuid.svg?branch=master)](https://travis-ci.org/hsingh/java-shortuuid)
+# java-shortuuid [![Build Status](https://travis-ci.org/acoelhosantos/java-shortuuid.svg?branch=master)](https://travis-ci.org/acoelhosantos/java-shortuuid)
 
 A generator library for concise, unambiguous and URL-safe UUIDs
 
